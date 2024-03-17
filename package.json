@@ -12,7 +12,9 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "ant-design-vue": "^4.1.2",
     "pinia": "^2.1.7",
+    "unplugin-vue-components": "^0.26.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },

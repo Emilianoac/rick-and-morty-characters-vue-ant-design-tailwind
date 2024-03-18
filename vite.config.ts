@@ -8,6 +8,7 @@ import { AntDesignVueResolver } from "unplugin-vue-components/resolvers"
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/rick-and-morty-characters-vue-ant-design-tailwind',
   plugins: [
     vue(),
     Components({

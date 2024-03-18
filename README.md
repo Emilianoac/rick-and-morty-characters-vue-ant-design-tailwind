@@ -1,6 +1,6 @@
 # vue
 
-Rick and Morty characters gallery with Vue 3 + Ant design + Tailiwind
+Rick and Morty characters gallery with Vue 3 + Ant design + Tailwind
 
 ## Recommended IDE Setup
 

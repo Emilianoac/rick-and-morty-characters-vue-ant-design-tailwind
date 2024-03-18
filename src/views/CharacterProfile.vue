@@ -31,8 +31,11 @@
 <template>
   <main clas="main-character-profile" v-if="store.singleCharacter.name">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl my-10">
-      <a-row :gutter="40">
-        <a-col :span="8">
+      <a-row :gutter="[40, 40]">
+        <a-col
+          :xs="24"
+          :md="12"
+          :lg="8">
           <a-card class="sticky top-20">
             <h1 class="text-3xl uppercase font-bold text-center">{{ store.singleCharacter.name }}</h1>
             <img class="max-w-full w-44 my-5 rounded-full mx-auto":src="store.singleCharacter.image">
@@ -50,7 +53,10 @@
             </dd>
           </a-card>
         </a-col>
-        <a-col :span="16">
+        <a-col 
+          :xs="24"
+          :md="12"
+          :lg="16">
           <div class="flex justify-between items-center">
             <h2 class="text-2xl font-bold">Episodes </h2>
             <p>Total: <strong> {{ store.singleCharacter.episode.length }}</strong> </p>

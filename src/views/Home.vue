@@ -1,7 +1,10 @@
 <script setup lang="ts">
+  import { ref } from "vue"
   import { useCharactersStore } from "@/stores/characters"
 
   const store = useCharactersStore()
+  const currentPage = ref(1)
+  const pageSize = ref(20)
 
   async function getCharacters() {
     await store.getCharacters()
@@ -12,6 +15,16 @@
 <template>
   <main>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl my-10">
+      <div class="flex justify-center lg:justify-end my-4">
+        <a-pagination 
+          v-if="store.characters.length"
+          @change="store.getCharacters(currentPage)"
+          :pageSizeOptions="[]"
+          v-model:current="currentPage" 
+          v-model:pageSize="pageSize" 
+          :total="store.endPointInfo.count"  
+        />
+      </div>
       <a-row :gutter="[16, 16]">
         <a-col 
           v-for="(character, i) in store.characters" 
@@ -45,6 +58,16 @@
           </a-card>
         </a-col>
       </a-row>
+      <div class="flex justify-center lg:justify-end my-4">
+        <a-pagination 
+          v-if="store.characters.length"
+          @change="store.getCharacters(currentPage)"
+          :pageSizeOptions="[]"
+          v-model:current="currentPage" 
+          v-model:pageSize="pageSize" 
+          :total="store.endPointInfo.count" 
+        />
+      </div>
     </div>
   </main>
 </template>

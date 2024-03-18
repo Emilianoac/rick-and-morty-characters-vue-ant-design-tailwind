@@ -22,3 +22,10 @@ interface Location {
   name: string
   url: string
 }
+
+interface EndPointInfo {
+  count: number,
+  pages: number,
+  next: string,
+  prev: string
+}

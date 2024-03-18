@@ -8,14 +8,16 @@ export const useCharactersStore = defineStore("characters",{
       singleCharacter: {} as Character,
       characterEpisodes: [] as Episode[],
       searchResults: [] as Character[],
+      endPointInfo: {} as EndPointInfo
     }
   },
   actions: {
-    async getCharacters() {
+    async getCharacters(page: number = 1) {
       try {
-        const res = await fetch(apiURL)
+        const res = await fetch(apiURL + `?page=${page}`)
         const data = await res.json()
         this.characters = data.results
+        this.endPointInfo = data.info
       } catch (error) {
         console.error(error)
       }

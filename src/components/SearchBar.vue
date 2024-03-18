@@ -29,7 +29,7 @@
     <div class="container bg-white p-4 mt-1 rounded  shadow-lg absolute top-10 w-full overflow-auto max-h-80" v-if="isActive">
       <ul class="p-0">
         <li v-for="result in searchResults" class="hover:opacity-50">
-          <RouterLink class="flex justify-start items-center" :to="`/character/${result.id}`">
+          <RouterLink class="flex justify-start items-center" :to="`/characters/${result.id}`">
             <img class="w-12 h-12 me-2 rounded-md" :src="result?.image" :alt="result?.name">
             <div>
               <p>{{ result?.name }}</p>

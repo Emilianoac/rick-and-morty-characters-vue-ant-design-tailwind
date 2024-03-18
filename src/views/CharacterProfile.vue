@@ -1,6 +1,7 @@
 <script lang="ts" setup>
   import { useRoute } from "vue-router"
   import { useCharactersStore } from "@/stores/characters";
+  import { watch } from "vue";
 
   const store = useCharactersStore()
   const route = useRoute()
@@ -19,10 +20,14 @@
     await store.getCharacterEpisodes(store.singleCharacter.episode)
   }
 
+  watch(() => route.params.id, async () => {
+    getCharacter()
+  })
+
 </script>
 
 <template>
-  <main clas="main-character-profile" v-if="store.singleCharacter">
+  <main clas="main-character-profile" v-if="store.singleCharacter.name">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl my-10">
       <a-row :gutter="40">
         <a-col :span="8">

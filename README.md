@@ -1,6 +1,6 @@
 # vue
 
-This template should help get you started developing with Vue 3 in Vite.
+Rick and Morty characters gallery with Vue 3 + Ant design + Tailiwind
 
 ## Recommended IDE Setup
 

@@ -10,6 +10,8 @@
     const parsesId = parseInt(route.params.id as string)
     await store.getSingleCharacter(parsesId)
 
+    document.title = `${store.singleCharacter.name} | Rick and Morty Characters`
+
     if (store.singleCharacter) {
       await getCharacterEpisodes()
     }
